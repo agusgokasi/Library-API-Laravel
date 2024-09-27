@@ -30,7 +30,7 @@ class BookServiceTest extends TestCase
             'author_id' => $author->id,
         ];
 
-        $book = $this->bookService->createBook($data);
+        $this->bookService->createBook($data);
 
         $this->assertDatabaseHas('books', $data);
     }
@@ -39,7 +39,8 @@ class BookServiceTest extends TestCase
     {
         $book = Book::factory()->create();
 
-        $retrievedBook = $this->bookService->getBookById($book->id);
+        $response = $this->bookService->getBookById($book->id);
+        $retrievedBook = $response->getData()->data;
 
         $this->assertEquals($book->id, $retrievedBook->id);
         $this->assertEquals($book->title, $retrievedBook->title);
@@ -55,7 +56,8 @@ class BookServiceTest extends TestCase
             'publish_date' => '2021-01-01'
         ];
 
-        $updatedBook = $this->bookService->updateBook($book->id, $data);
+        $response = $this->bookService->updateBook($book->id, $data);
+        $updatedBook = $response->getData()->data;
 
         $this->assertDatabaseHas('books', $data);
         $this->assertEquals($updatedBook->title, 'Updated Title');

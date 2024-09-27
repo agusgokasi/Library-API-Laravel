@@ -27,7 +27,7 @@ class AuthorServiceTest extends TestCase
             'birth_date' => '1970-01-01'
         ];
 
-        $author = $this->authorService->createAuthor($data);
+        $this->authorService->createAuthor($data);
 
         $this->assertDatabaseHas('authors', $data);
     }
@@ -36,7 +36,8 @@ class AuthorServiceTest extends TestCase
     {
         $author = Author::factory()->create();
 
-        $retrievedAuthor = $this->authorService->getAuthorById($author->id);
+        $response = $this->authorService->getAuthorById($author->id);
+        $retrievedAuthor = $response->getData()->data;
 
         $this->assertEquals($author->id, $retrievedAuthor->id);
         $this->assertEquals($author->name, $retrievedAuthor->name);
@@ -52,7 +53,8 @@ class AuthorServiceTest extends TestCase
             'birth_date' => '1990-01-01'
         ];
 
-        $updatedAuthor = $this->authorService->updateAuthor($author->id, $data);
+        $response = $this->authorService->updateAuthor($author->id, $data);
+        $updatedAuthor = $response->getData()->data;
 
         $this->assertDatabaseHas('authors', $data);
         $this->assertEquals($updatedAuthor->name, 'Updated Name');
@@ -72,7 +74,8 @@ class AuthorServiceTest extends TestCase
         $author = Author::factory()->create();
         $books = Book::factory()->count(3)->create(['author_id' => $author->id]);
 
-        $retrievedBooks = $this->authorService->getBooksByAuthor($author->id);
+        $response = $this->authorService->getBooksByAuthor($author->id);
+        $retrievedBooks = $response->getData()->data;
 
         $this->assertCount(3, $retrievedBooks);
         $this->assertEquals($books[0]->title, $retrievedBooks[0]->title);
