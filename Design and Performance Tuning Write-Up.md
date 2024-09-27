@@ -34,28 +34,28 @@
 ## Folder Structure
 Here's how your repository should be structured:
 
-/library-api
-├── /app
-│   ├── /Services
-│   │   ├── AuthorService.php
-│   │   └── BookService.php
-│   └── /Http
-│       ├── /Controllers
-│       │   ├── AuthorController.php
-│       │   └── BookController.php
-│       ├── /Requests
-│       │   ├── AuthorRequest.php
-│       │   └── BookRequest.php
-├── /database
-│   ├── /factories
-│   │   ├── AuthorFactory.php
-│   │   └── BookFactory.php
-├── /tests
-│   ├── /Unit
-│   │   ├── AuthorServiceTest.php
-│   │   ├── BookServiceTest.php
-│   │   ├── AuthorControllerTest.php
-│   │   └── BookControllerTest.php
-├── README.md
-├── Design and Performance Tuning Write-Up
+/library-api<br>
+├── /app<br>
+│   ├── /Services<br>
+│   │   ├── AuthorService.php<br>
+│   │   └── BookService.php<br>
+│   └── /Http<br>
+│       ├── /Controllers<br>
+│       │   ├── AuthorController.php<br>
+│       │   └── BookController.php<br>
+│       ├── /Requests<br>
+│       │   ├── AuthorRequest.php<br>
+│       │   └── BookRequest.php<br>
+├── /database<br>
+│   ├── /factories<br>
+│   │   ├── AuthorFactory.php<br>
+│   │   └── BookFactory.php<br>
+├── /tests<br>
+│   ├── /Unit<br>
+│   │   ├── AuthorServiceTest.php<br>
+│   │   ├── BookServiceTest.php<br>
+│   │   ├── AuthorControllerTest.php<br>
+│   │   └── BookControllerTest.php<br>
+├── README.md<br>
+├── Design and Performance Tuning Write-Up<br>
 └── .env.example
