@@ -22,7 +22,7 @@ This is a simple RESTful API for managing authors and books, built with Laravel 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/library-api.git
+   git clone https://github.com/agusgokasi/Library-API-Laravel.git
 
 2. Navigate to the project directory:
    ```bash
