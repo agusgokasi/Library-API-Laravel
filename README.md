@@ -62,9 +62,9 @@ This is a simple RESTful API for managing authors and books, built with Laravel 
 ## Usage
 
 You can now access the API by running:
-    ```bash
-    php artisan serve
 
+    php artisan serve
+    
 The API will be available at http://127.0.0.1:8000. You can access the following routes:
 - GET /api/authors: List all authors.
 - POST /api/authors: Create a new author.
